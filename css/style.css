@@ -1,0 +1,81 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #222222;
+  background: url("../assets/images/background3.png") center/cover no-repeat fixed;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Khung menu chính */
+.menu {
+  width: 320px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 24px;
+  text-align: center;
+}
+
+.game-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #0066cc;
+  margin-bottom: 20px;
+}
+
+.menu-button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu-button,
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #0066cc;
+  border: 1px solid #0052a3;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.menu-button:hover,
+.btn:hover {
+  background-color: #0052a3;
+}
+
+/*chức năng thoát */
+.btn-danger {
+  background-color: #cc3333;
+  border-color: #aa2828;
+}
+
+.btn-danger:hover {
+  background-color: #aa2828;
+}
+
+.btn-secondary {
+  background-color: #555555;
+  border-color: #444444;
+}
+
+.btn-secondary:hover {
+  background-color: #444444;
+}
