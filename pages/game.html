@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trò Chơi PING PONG</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/game.css">
+</head>
+<body class="game-page">
+
+  <div class="game-wrapper">
+    <main id="game-area">
+      <div id="game-field">
+        <div id="launch-prompt">Nhấn phím Space hoặc Click chuột trái để bắn bóng</div>
+      </div>
+      <div id="paddle"></div>
+    </main>
+
+    <!-- Bảng thông tin bên cạnh: nền xám sáng -->
+    <aside id="sidebar">
+      <!-- Combobox chọn level -->
+      <div class="sidebar-level-box">
+        <label for="level-select">Chọn màn chơi:</label>
+        <select id="level-select" class="level-combobox">
+          <option value="1">Màn 1: Căn bản</option>
+          <option value="2">Màn 2: Gạch đặc biệt</option>
+          <option value="3">Màn 3: Nổ dây chuyền</option>
+          <option value="4">Màn 4: Gạch di chuyển</option>
+          <option value="5">Màn 5: Đấu quái vật</option>
+          <option value="6">Màn 6: Trùm cuối</option>
+        </select>
+      </div>
+
+      <!-- Dòng thông số trận đấu -->
+      <div class="sidebar-stats">
+        <div class="stat-row">
+          <span>Điểm số:</span>
+          <b id="hud-score">0</b>
+        </div>
+        
+        <div class="stat-row" id="hud-lives-row">
+          <span>Mạng còn lại:</span>
+          <b id="hud-lives">3 / 3</b>
+        </div>
+
+        <div class="stat-row" id="hud-hp-row" style="display: none;">
+          <span>Máu người chơi:</span>
+          <b id="hud-hp-val">100 / 100</b>
+        </div>
+
+        <div class="stat-row" id="hud-boss-row" style="display: none;">
+          <span>Máu Boss:</span>
+          <b id="hud-boss-val">40 / 40</b>
+        </div>
+
+        <div class="stat-row" id="hud-dash-row" style="display: none;">
+          <span>Lướt né đạn:</span>
+          <b id="hud-dash-val">Sẵn sàng</b>
+        </div>
+
+        <div class="stat-row" id="hud-bnc-row" style="display: none;">
+          <span>Cộng dồn ST:</span>
+          <b id="hud-bnc-val">+0</b>
+        </div>
+
+        <div class="stat-row" id="hud-combo-row" style="display: none;">
+          <span>Combo:</span>
+          <b id="hud-combo">x1</b>
+        </div>
+
+        <div class="stat-row">
+          <span>Hiệu ứng:</span>
+          <span id="hud-effects-list">Bình thường</span>
+        </div>
+      </div>
+
+      <!-- Các nút điều khiển -->
+      <div class="sidebar-actions">
+        <button class="btn" id="btn-pause">Tạm dừng (P)</button>
+        <button class="btn" id="btn-reset">Chơi lại màn (R)</button>
+        <button class="btn" id="btn-sound-toggle">Âm thanh: Bật</button>
+        <button class="btn" id="btn-open-guide">Hướng dẫn</button>
+        <a href="../index.html" class="btn btn-danger" id="btn-quit">Thoát ra menu</a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Hộp thoại Tạm Dừng -->
+  <div class="modal-overlay" id="modal-pause">
+    <div class="modal-box">
+      <h3 class="modal-title">Tạm Dừng</h3>
+      <p class="modal-desc">Trận đấu đang tạm dừng. Nhấn tiếp tục hoặc phím P để chơi tiếp.</p>
+      <div class="modal-buttons">
+        <button class="btn" id="btn-resume">Tiếp tục chơi</button>
+        <button class="btn" id="btn-pause-restart">Chơi lại màn</button>
+        <a href="instruction.html" target="_blank" class="btn btn-secondary">Xem hướng dẫn</a>
+        <a href="../index.html" class="btn btn-danger">Thoát ra menu</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- UI Ket thuc -->
+  <div class="modal-overlay" id="modal-gameover">
+    <div class="modal-box">
+      <h3 class="modal-title" id="gameover-title">Chiến Thắng!</h3>
+      <p class="modal-desc" id="gameover-subtitle">Bạn đã hoàn thành màn chơi này.</p>
+      
+      <div class="modal-score-box">
+        Tổng điểm đạt được:
+        <b id="gameover-score">0</b>
+      </div>
+
+      <div class="modal-buttons">
+        <button class="btn" id="btn-replay">Chơi lại màn này</button>
+        <button class="btn" id="btn-next-level">Sang màn tiếp theo</button>
+        <a href="../index.html" class="btn btn-danger">Về trang chủ</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

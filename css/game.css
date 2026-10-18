@@ -1,0 +1,326 @@
+
+.game-page {
+  background-color: #eef1f4;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+/* Khung chứa game */
+.game-wrapper {
+  display: flex;
+  background-color: #ffffff;
+  border: 2px solid #333333;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#game-area {
+  position: relative;
+  width: 800px;
+  height: 620px;
+  background-color: #000000;
+  overflow: hidden;
+  user-select: none;
+}
+
+#game-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+
+#paddle {
+  position: absolute;
+  height: 14px;
+  background-color: #0066cc;
+  border-radius: 2px;
+  z-index: 20;
+}
+
+#paddle.frozen {
+  background-color: #00aaaa;
+}
+
+#paddle.slowed {
+  border: 2px solid #e6b800;
+}
+
+#paddle.reversed {
+  border: 2px solid #cc3333;
+}
+
+#paddle.enlarged {
+  background-color: #2e7d32;
+}
+
+.ball {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  z-index: 15;
+}
+
+.ball.powered {
+  background-color: #ff9900;
+}
+
+/*  viên gạch */
+.brick {
+  position: absolute;
+  border: 1px solid #111111;
+  font-size: 11px;
+  font-weight: bold;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.brick.moving {
+  border: 1px solid #ffffff;
+}
+
+.brick.indestr {
+  background-color: #666666 !important;
+  color: #cccccc;
+}
+
+.enemy {
+  position: absolute;
+  background-color: #cc3333;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  border: 1px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 12;
+}
+
+/* Boss tối thượng (Màn 6) */
+.boss-entity {
+  position: absolute;
+  background-color: #880000;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  border: 2px solid #ff4444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 12;
+}
+
+.boss-entity.phase2 {
+  background-color: #660066;
+  border-color: #cc44cc;
+}
+
+.bullet {
+  position: absolute;
+  width: 6px;
+  height: 14px;
+  background-color: #ff3333;
+  border-radius: 2px;
+  z-index: 14;
+}
+
+.item-fall {
+  position: absolute;
+  width: 24px;
+  height: 14px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  z-index: 13;
+}
+
+.item-fall.buff {
+  background-color: #2e7d32;
+}
+
+.item-fall.debuff {
+  background-color: #8e24aa;
+}
+
+.item-fall.plus1,
+.item-fall.plus3 {
+  background-color: #f57c00;
+}
+
+/* Dòng nhắc bắn bóng */
+#launch-prompt {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  font-size: 13px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 6px 12px;
+  border: 1px solid #555555;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+
+.dash-trail {
+  position: absolute;
+  height: 14px;
+  background: #0066cc;
+  opacity: 0.4;
+  border-radius: 2px;
+}
+
+/*  Sidebar */
+#sidebar {
+  width: 230px;
+  background-color: #f7f7f7;
+  border-left: 2px solid #333333;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Mục chọn màn */
+.sidebar-level-box {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.sidebar-level-box label {
+  display: block;
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #222222;
+}
+
+.level-combobox {
+  width: 100%;
+  padding: 6px 8px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #222222;
+  background-color: #ffffff;
+  border: 1px solid #999999;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}
+
+.level-combobox:focus {
+  border-color: #0066cc;
+}
+
+/* thông tin  */
+.sidebar-stats {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #333333;
+}
+
+.stat-row b {
+  color: #000000;
+}
+
+/* Các nút bấm hành động trong sidebar */
+.sidebar-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.sidebar-actions .btn {
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+/* Modal (Tạm dừng, Kết thúc) */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-box {
+  background-color: #ffffff;
+  border: 2px solid #333333;
+  border-radius: 4px;
+  padding: 20px;
+  width: 320px;
+  text-align: center;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0066cc;
+  margin-bottom: 8px;
+}
+
+.modal-desc {
+  font-size: 13px;
+  color: #444444;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.modal-score-box {
+  background-color: #f0f0f0;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.modal-score-box b {
+  font-size: 20px;
+  color: #0066cc;
+  display: block;
+  margin-top: 4px;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
