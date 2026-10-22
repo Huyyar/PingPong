@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,38 +8,39 @@
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/game.css">
 </head>
+
 <body class="game-page">
 
   <div class="game-wrapper">
     <main id="game-area">
       <div id="game-field">
-        <div id="launch-prompt">Nhấn phím Space hoặc Click chuột trái để bắn bóng</div>
       </div>
       <div id="paddle"></div>
+      <div id="ball" class="ball"></div>
     </main>
 
-    <!-- Bảng thông tin bên cạnh: nền xám sáng -->
+    <!-- side bar  -->
     <aside id="sidebar">
-      <!-- Combobox chọn level -->
       <div class="sidebar-level-box">
         <label for="level-select">Chọn màn chơi:</label>
         <select id="level-select" class="level-combobox">
           <option value="1">Màn 1: Căn bản</option>
           <option value="2">Màn 2: Gạch đặc biệt</option>
-          <option value="3">Màn 3: Nổ dây chuyền</option>
-          <option value="4">Màn 4: Gạch di chuyển</option>
-          <option value="5">Màn 5: Đấu quái vật</option>
-          <option value="6">Màn 6: Trùm cuối</option>
+          <option value="3">Màn 3: Gạch nhiều hit</option>
+          <option value="4">Màn 4: Đảo ngược điều khiển</option>
+          <option value="5">Màn 5: Gạch di chuyển</option>
+          <option value="6">Màn 6: Đánh quái</option>
+          <option value="7">Màn 7: Trùm cuối</option>
         </select>
       </div>
 
-      <!-- Dòng thông số trận đấu -->
+      <!-- thông so -->
       <div class="sidebar-stats">
         <div class="stat-row">
           <span>Điểm số:</span>
           <b id="hud-score">0</b>
         </div>
-        
+
         <div class="stat-row" id="hud-lives-row">
           <span>Mạng còn lại:</span>
           <b id="hud-lives">3 / 3</b>
@@ -105,7 +107,7 @@
     <div class="modal-box">
       <h3 class="modal-title" id="gameover-title">Chiến Thắng!</h3>
       <p class="modal-desc" id="gameover-subtitle">Bạn đã hoàn thành màn chơi này.</p>
-      
+
       <div class="modal-score-box">
         Tổng điểm đạt được:
         <b id="gameover-score">0</b>
@@ -121,4 +123,5 @@
 
   <script src="../js/main.js"></script>
 </body>
+
 </html>

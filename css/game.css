@@ -19,7 +19,7 @@
 
 #game-area {
   position: relative;
-  width: 800px;
+  width: 1000px;
   height: 620px;
   background-color: #000000;
   overflow: hidden;
@@ -35,8 +35,11 @@
 
 #paddle {
   position: absolute;
+  width: 100px;
   height: 14px;
-  background-color: #0066cc;
+  bottom: 30px;
+  left: 350px;
+  background-color: white;
   border-radius: 2px;
   z-index: 20;
 }
@@ -61,7 +64,9 @@
   position: absolute;
   width: 12px;
   height: 12px;
-  background-color: #ffffff;
+  bottom: 46px;
+  left: 394px;
+  background-color: red;
   border-radius: 50%;
   z-index: 15;
 }
@@ -105,7 +110,7 @@
   z-index: 12;
 }
 
-/* Boss tối thượng (Màn 6) */
+/* Boss */
 .boss-entity {
   position: absolute;
   background-color: #880000;
@@ -323,4 +328,86 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+
+/* ========================================================
+   MÀN 6: QUÁI VẬT & ĐẠN ĐỎ (Mộc mạc, phong cách cổ điển)
+   ======================================================== */
+.monster {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  background-color: #cc3333;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  z-index: 12;
+}
+
+.monster.hit {
+  background-color: #ff8888;
+}
+
+.monster-bullet {
+  position: absolute;
+  width: 6px;
+  height: 14px;
+  background-color: #9c27b0;
+  border-radius: 2px;
+  z-index: 14;
+}
+
+.boss-bullet {
+  position: absolute;
+  width: 6px;
+  height: 14px;
+  background-color: #ff3333;
+  border-radius: 2px;
+  z-index: 14;
+}
+
+#paddle.paddle-hit {
+  background-color: #ff3333 !important;
+}
+
+
+/* ========================================================
+   MÀN 7: BOSS (Hình chữ nhật đỏ to hơn)
+   ======================================================== */
+.boss-entity {
+  position: absolute;
+  width: 140px;
+  height: 44px;
+  background-color: #cc2222 !important;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  z-index: 12;
+}
+
+.boss-entity.hit {
+  background-color: #ff8888 !important;
+}
+
+.boss-name {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.boss-hp {
+  font-size: 11px;
+  margin-top: 2px;
 }
